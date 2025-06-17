@@ -9,9 +9,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Marca } from "@/models/marca";
 import { Edit, Trash } from "lucide-react";
 
-export function MarcasList() {
+type MarcasListProps = {
+  marcas: Marca[]
+}
+export function MarcasList({ marcas }: MarcasListProps) {
   return (
     <section className="mt-8 rounded-md border">
       <Table>
@@ -23,34 +27,22 @@ export function MarcasList() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow>
-            <TableCell className="font-medium">1</TableCell>
-            <TableCell>Marca 1</TableCell>
-            <TableCell>
-              <div className="flex gap-2">
-                <Button size="icon">
-                  <Edit />
-                </Button>
-                <Button size="icon" variant="destructive">
-                  <Trash />
-                </Button>
-              </div>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className="font-medium">2</TableCell>
-            <TableCell>Marca 2</TableCell>
-            <TableCell>
-              <div className="flex gap-2">
-                <Button size="icon">
-                  <Edit />
-                </Button>
-                <Button size="icon" variant="destructive">
-                  <Trash />
-                </Button>
-              </div>
-            </TableCell>
-          </TableRow>
+          {marcas.map((marca) => (
+            <TableRow key={marca.id}>
+              <TableCell className="font-medium">{marca.id}</TableCell>
+              <TableCell>{marca.nome}</TableCell>
+              <TableCell>
+                <div className="flex gap-2">
+                  <Button size="icon">
+                    <Edit />
+                  </Button>
+                  <Button size="icon" variant="destructive">
+                    <Trash />
+                  </Button>
+                </div>
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </section>
