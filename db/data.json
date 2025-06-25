@@ -11,46 +11,47 @@
     {
       "id": "3",
       "nome": "Sony"
-    },
-    {
-      "id": "3a08",
-      "nome": "Microsoft"
-    },
-    {
-      "id": "bb90",
-      "nome": "Nova Marca"
-    },
-    {
-      "id": "c01c",
-      "nome": "MARCa"
-    },
-    {
-      "id": "1dd7",
-      "nome": "mamsda"
-    },
-    {
-      "id": "7207",
-      "nome": "Teste"
-    },
-    {
-      "id": "f92f",
-      "nome": "tee"
-    },
-    {
-      "id": "34a5",
-      "nome": "sdfsdf"
-    },
-    {
-      "id": "21d4",
-      "nome": "sdgsdf"
-    },
-    {
-      "id": "34f4",
-      "nome": "sdfsdf"
-    },
-    {
-      "id": "4a84",
-      "nome": "deus"
     }
+    
+  ],
+
+
+
+  "grupos": [
+    {
+      "id": "1",
+      "nome": "Eletronico",
+      "subGrupo": "amem"
+    },
+    {
+      "id": "2",
+      "nome": "Comida",
+      "subGrupo": "amem"
+    },
+    {
+      "id": "3",
+      "nome": "Deus",
+      "subGrupo": "amem"
+    },
+    {
+      "id": "4",
+      "nome": "Artefatos Divinos",
+      "subGrupo": "amem"
+    }
+    
+  ],
+
+  "unidade": [
+    {
+      "id": "1",
+      "nome": "metros",
+      "fracionamento": "sim"
+    },
+    {
+      "id": "2",
+      "nome": "cm",
+      "fracionamento": "nao"
+    }
+    
   ]
 }

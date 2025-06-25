@@ -1,3 +1,4 @@
+import { DeleteButton } from "@/components/delete-button";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -8,7 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Marca } from "@/models/marca";
-import { Edit, Trash } from "lucide-react";
+import { Edit } from "lucide-react";
 
 
 export async function MarcasList() {
@@ -37,9 +38,7 @@ export async function MarcasList() {
                   <Button size="icon">
                     <Edit />
                   </Button>
-                  <Button size="icon" variant="destructive">
-                    <Trash />
-                  </Button>
+                  <DeleteButton></DeleteButton>              
                 </div>
               </TableCell>
             </TableRow>
