@@ -1,6 +1,9 @@
 "use cliente";
 import { Button } from "@/components/ui/button";
-import { Edit, Trash } from "lucide-react";
+import {Trash } from "lucide-react";
+type DeleteButtonprops = {
+  id:number
+}
 import {
   AlertDialog,
   AlertDialogAction,
@@ -12,9 +15,13 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
+import { deletarMarca } from "@/actions/marca-actions";
 
-export function DeleteButton(){
-    return <AlertDialog>
+export function DeleteButton({id}: DeleteButtonprops){
+  const handleDelete = async () => {
+    deletarMarca(id)
+  }
+    return(<AlertDialog>
       <AlertDialogTrigger asChild>
         <Button size="icon" variant="destructive">
                     <Trash />
@@ -29,8 +36,10 @@ export function DeleteButton(){
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel >Cancelar</AlertDialogCancel>
-          <AlertDialogAction>Confirmar</AlertDialogAction>
+          <AlertDialogAction asChild>
+            <Button variant="destructive" size="icon" onClick={handleDelete}>Confirmar</Button>
+            </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
-    </AlertDialog>
+    </AlertDialog>)
 }

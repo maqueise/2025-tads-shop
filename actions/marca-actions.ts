@@ -1,20 +1,24 @@
 'use server'
 
+import { parceFormdata } from "@/lib/helpers"
 import { redirect } from "next/navigation"
-
+const API_URL = process.env.API_URL
+const headers = {
+    'Content-Type' : 'application/json'
+}
 export async function criarMarca(formData:FormData){
      console.log(formData)
- let response = await fetch('http://localhost:3002/marcas',{
+ let response = await fetch(`${API_URL}/marca`,{
+        headers,
         method:'POST',
-        body:JSON.stringify({nome:formData.get('nome')})
+        body:parceFormdata(formData)
     })
    
     redirect('/cadastro/marcas/')
 }
-export async function deletarMarca(formData:FormData){
-    let response =  fetch('http://localhost:3002/marcas',{
-        method:'DELETE',
-        body:JSON.stringify({nome:formData.get('id')})
+export async function deletarMarca(id: number){
+    let response =  await fetch(`${API_URL}/marca/${id}`,{
+        method:'DELETE'
     })
     redirect('/cadastro/marcas/')
 }
