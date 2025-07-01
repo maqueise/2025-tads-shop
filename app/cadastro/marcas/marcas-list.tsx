@@ -1,3 +1,4 @@
+import { DeleteButton } from "@/components/delete-button";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -12,9 +13,9 @@ import { Edit, Trash } from "lucide-react";
 
 
 export async function MarcasList() {
-   await new Promise((resolve)=>{setTimeout(resolve,3000)})
+   //await new Promise((resolve)=>{setTimeout(resolve,3000)})
 
-   const response = await fetch('http://localhost:3002/marcas',{
+   const response = await fetch('http://10.10.67.20:8080/marca',{
      cache:'no-store'
    })
    const marcas:Marca[] = await response.json();
@@ -38,9 +39,7 @@ export async function MarcasList() {
                   <Button size="icon">
                     <Edit />
                   </Button>
-                  <Button size="icon" variant="destructive">
-                    <Trash />
-                  </Button>
+                  <DeleteButton/>
                 </div>
               </TableCell>
             </TableRow>
