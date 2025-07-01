@@ -17,10 +17,10 @@ export async function criarMarca(formData:FormData){
    
     redirect('/cadastro/marcas/')
 }
-export async function deletarMarca(formData:FormData){
-    let response =  fetch(`${API_URL}/marca`,{
+export async function deletarMarca(id:number){
+    let response = await fetch(`${API_URL}/marca/${id}`,{
         method:'DELETE',
-        body:JSON.stringify({nome:formData.get('id')})
     })
     redirect('/cadastro/marcas/')
 }
+

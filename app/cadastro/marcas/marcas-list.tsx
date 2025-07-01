@@ -39,7 +39,7 @@ export async function MarcasList() {
                   <Button size="icon">
                     <Edit />
                   </Button>
-                  <DeleteButton/>
+                  <DeleteButton id={marca.id}/>
                 </div>
               </TableCell>
             </TableRow>
