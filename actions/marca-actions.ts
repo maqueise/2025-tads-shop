@@ -7,14 +7,17 @@ const headers = {
     'Content-Type': 'application/json'
 }
 
-export async function criarMarca(formData:FormData){
+ export type MarcaFormState = {
+    nome: string
+}
+export async function criarMarca(prevState:MarcaFormState,formData:FormData){
         let response = await fetch(`${API_URL}/marca`,{
         headers,
         method:'POST',
         body:stringifyFormData(formData)
     })
-     //console.log(await response.json())
-   
+    await new Promise((resolve)=>{setTimeout(resolve,3000)})
+    return prevState
     redirect('/cadastro/marcas/')
 }
 export async function deletarMarca(id:number){
