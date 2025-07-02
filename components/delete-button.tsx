@@ -1,9 +1,6 @@
 "use cliente";
 import { Button } from "@/components/ui/button";
 import {Trash } from "lucide-react";
-type DeleteButtonprops = {
-  id:number
-}
 import {
   AlertDialog,
   AlertDialogAction,
@@ -14,8 +11,13 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
+} 
+
+from "@/components/ui/alert-dialog"
 import { deletarMarca } from "@/actions/marca-actions";
+type DeleteButtonprops = {
+  id:number
+}
 
 export function DeleteButton({id}: DeleteButtonprops){
   const handleDelete = async () => {
