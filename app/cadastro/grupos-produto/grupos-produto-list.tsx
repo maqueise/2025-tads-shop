@@ -37,7 +37,7 @@ export function GruposProdutoList() {
                         <Button size="icon">
                           <Edit />
                         </Button>
-                        <DeleteButton></DeleteButton>             
+                        <DeleteButton id={grupo.id}/>             
                       </div>
                     </TableCell>
                   </TableRow>

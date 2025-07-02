@@ -1,6 +1,5 @@
-"use cliente";
-import { Button } from "@/components/ui/button";
-import {Trash } from "lucide-react";
+'use client';
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -11,37 +10,49 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} 
-
-from "@/components/ui/alert-dialog"
+} from "@/components/ui/alert-dialog"
+import { Button } from "./ui/button";
 import { deletarMarca } from "@/actions/marca-actions";
-type DeleteButtonprops = {
-  id:number
+import { Trash } from "lucide-react";
+
+type DeleteButtonProps = {
+  id: number;
+
 }
 
-export function DeleteButton({id}: DeleteButtonprops){
+export function DeleteButton({id}: DeleteButtonProps) {
+
   const handleDelete = async () => {
     deletarMarca(id)
   }
-    return(<AlertDialog>
+    return(
+         <AlertDialog>  
       <AlertDialogTrigger asChild>
-        <Button size="icon" variant="destructive">
+        
+       <Button size="icon" variant="destructive">
+                
+                  
+                  
+
                     <Trash />
-                  </Button> 
+                  </Button>
+                  
+                  
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Voce tem certeza?</AlertDialogTitle>
+          <AlertDialogTitle>Você está excluindo um item, você tem certeza?</AlertDialogTitle>
           <AlertDialogDescription>
-            Essa ação nao podera ser desfeita, tem certeza que deseja deletar essa marca?
+            Se você excluir este item, não poderá desfazer essa ação. Esta ação é permanente e não pode ser desfeita.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel >Cancelar</AlertDialogCancel>
+          <AlertDialogCancel>Cancelar</AlertDialogCancel>
           <AlertDialogAction asChild>
-            <Button variant="destructive" size="icon" onClick={handleDelete}>Confirmar</Button>
-            </AlertDialogAction>
+            <Button variant="destructive" size="icon" onClick={handleDelete}>Excluir</Button>
+          </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
-    </AlertDialog>)
+    </AlertDialog>
+    )
 }
