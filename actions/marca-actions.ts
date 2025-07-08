@@ -30,7 +30,7 @@ export async function deletarMarca(id: number) {
   let response = await fetch(`${API_URL}/marca/${id}`, {
     method: "DELETE",
   });
-  console.log("response", response);
+
   if (response.status !== 204 && response.status !== 200) {
     return {
       sucesso: false,
