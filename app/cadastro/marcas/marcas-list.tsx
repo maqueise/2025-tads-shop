@@ -9,16 +9,15 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Marca } from "@/models/marca";
-import { Edit, Trash } from "lucide-react";
-
+import { Edit } from "lucide-react";
 
 export async function MarcasList() {
-   //await new Promise((resolve)=>{setTimeout(resolve,3000)})
+  //await new Promise((resolve)=>{setTimeout(resolve,3000)})
 
-   const response = await fetch(`${process.env.API_URL}/marca`,{
-     cache:'no-store'
-   })
-   const marcas:Marca[] = await response.json();
+  const response = await fetch(`${process.env.API_URL}/marca`, {
+    cache: "no-store",
+  });
+  const marcas: Marca[] = await response.json();
   return (
     <section className="mt-8 rounded-md border">
       <Table>
@@ -39,7 +38,7 @@ export async function MarcasList() {
                   <Button size="icon">
                     <Edit />
                   </Button>
-                  <DeleteButton id={marca.id}/>
+                  <DeleteButton id={marca.id} />
                 </div>
               </TableCell>
             </TableRow>
