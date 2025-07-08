@@ -3,18 +3,17 @@ import { Button } from "./ui/button";
 
 
 type SaveButtonProps = {
-    isPending?: boolean;
+    isPending: boolean;
 }
-export function SaveButton({ isPending }: SaveButtonProps) {
-
-
+export function SaveButton({isPending}: SaveButtonProps) {
+   
     return (
         <>
             <Button type="submit">
-                {isPending ? <><Loader2Icon className="animate-spin" />Aguarde...</> : <><SaveIcon />Salvar</>}
+                {isPending ?
+                    <><Loader2Icon className="animate-spin" />Aguarde...</> :
+                    <><SaveIcon />Salvar</>}
             </Button>
         </>
-
-
     )
 }

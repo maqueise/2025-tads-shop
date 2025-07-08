@@ -1,4 +1,5 @@
-'use client';
+"use client";
+import { deletarMarca } from "@/actions/marca-actions";
 
 import {
   AlertDialog,
@@ -10,49 +11,51 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
-import { Button } from "./ui/button";
-import { deletarMarca } from "@/actions/marca-actions";
+} from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
 import { Trash } from "lucide-react";
-
+import { toast } from "sonner";
 type DeleteButtonProps = {
   id: number;
-
-}
-
-export function DeleteButton({id}: DeleteButtonProps) {
-
+};
+export function DeleteButton({ id }: DeleteButtonProps) {
   const handleDelete = async () => {
-    deletarMarca(id)
-  }
-    return(
-         <AlertDialog>  
+    const { sucesso, mensagem } = await deletarMarca(id);
+    if (sucesso) {
+      toast.success(mensagem);
+    } else {
+      toast.error(`Erro: ${mensagem}`);
+    }
+  };
+  return (
+    <AlertDialog>
       <AlertDialogTrigger asChild>
-        
-       <Button size="icon" variant="destructive">
-                
-                  
-                  
-
-                    <Trash />
-                  </Button>
-                  
-                  
+        <Button variant="destructive" size="icon">
+          <Trash />
+        </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Você está excluindo um item, você tem certeza?</AlertDialogTitle>
+          <AlertDialogTitle>Exclusão de Registro</AlertDialogTitle>
           <AlertDialogDescription>
-            Se você excluir este item, não poderá desfazer essa ação. Esta ação é permanente e não pode ser desfeita.
+            Tem certeza que deseja excluir este registro? Esta ação não pode ser
+            desfeita.
+
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancelar</AlertDialogCancel>
           <AlertDialogAction asChild>
-            <Button variant="destructive" size="icon" onClick={handleDelete}>Excluir</Button>
+
+            <Button variant="destructive" onClick={handleDelete}>
+              Excluir
+            </Button>
+
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-    )
+
+  );
 }
+
