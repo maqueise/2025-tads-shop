@@ -10,11 +10,14 @@ import Link from "next/link";
 import { useActionState } from "react";
 
 export function MarcasForm() {
-  const initialState: MarcaFormState ={
+  const initialState: MarcaFormState = {
     nome: "",
-  }
-  const [state,formAction,isPending] = useActionState(criarMarca,initialState)
-  
+  };
+  const [state, formAction, isPending] = useActionState(
+    criarMarca,
+    initialState
+  );
+
   return (
     <section className="mt-8">
       <form action={formAction} className="max-w-2xl">
@@ -23,11 +26,10 @@ export function MarcasForm() {
           <Input name="nome" />
         </div>
         <div className="mt-4 flex justify-end gap-2">
-          <Link href="/cadastro/marcas">
-            <Button variant="outline" type="button">
-              Cancelar
-            </Button>
-          </Link>
+          <Button variant="outline" type="button" asChild>
+            <Link href="/cadastro/marcas">Cancelar</Link>
+          </Button>
+
           <SaveButton isPending={isPending} />
         </div>
       </form>
