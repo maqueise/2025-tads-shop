@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/table";
 import { Marca } from "@/models/marca";
 import { Edit } from "lucide-react";
+import Link from "next/link";
 
 
 export async function MarcasList() {
@@ -37,8 +38,10 @@ export async function MarcasList() {
               <TableCell>{marca.nome}</TableCell>
               <TableCell>
                 <div className="flex gap-2">
-                  <Button size="icon">
-                    <Edit />
+                  <Button size="icon" asChild>
+                    <Link href={`/cadastro/marcas/editar/${marca.id}`}>
+                      <Edit />
+                    </Link>
                   </Button>
 
                   <DeleteButton id={marca.id} />

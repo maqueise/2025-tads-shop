@@ -3,12 +3,16 @@
     {
       "id": "3",
       "nome": "Sony"
+    },
+    {
+      "id": "3399",
+      "nome": "joaquim felix"
+    },
+    {
+      "id": "1a28",
+      "nome": "shaco"
     }
-    
   ],
-
-
-
   "grupos": [
     {
       "id": "1",
@@ -30,9 +34,7 @@
       "nome": "Artefatos Divinos",
       "subGrupo": "amem"
     }
-    
   ],
-
   "unidade": [
     {
       "id": "1",
@@ -44,6 +46,5 @@
       "nome": "cm",
       "fracionamento": "nao"
     }
-    
   ]
 }

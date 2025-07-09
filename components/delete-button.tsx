@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Trash } from "lucide-react";
 import { toast } from "sonner";
 type DeleteButtonProps = {
-  id: number;
+  id: string;
 };
 export function DeleteButton({ id }: DeleteButtonProps) {
   const handleDelete = async () => {
