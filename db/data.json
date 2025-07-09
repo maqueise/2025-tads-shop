@@ -1,8 +1,12 @@
 {
   "marca": [
     {
-      "id": "3",
-      "nome": "Sony"
+      "id": "f79e",
+      "nome": "Sony 123"
+    },
+    {
+      "id": "bf80",
+      "nome": "Microsoft"
     }
   ]
 }
