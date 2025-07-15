@@ -21,14 +21,26 @@ export async function criarMarca(
     method: "POST",
     body: stringifyFormData(formData),
   });
-  await new Promise((resolve) => {
-    setTimeout(resolve, 3000);
+  return prevState;
+  redirect("/cadastro/marcas/");
+}
+export async function editarMarca(
+  prevState: MarcaFormState,
+  formData: FormData
+) {
+  const id = formData.get("id");
+  let response = await fetch(`${API_URL}/marca/${id}`, {
+    headers,
+    method: "PUT",
+    body: stringifyFormData(formData),
   });
   return prevState;
   redirect("/cadastro/marcas/");
 }
 export async function deletarMarca(id: string) {
-  let response = await fetch(`${API_URL}/marcas/${id}`, {
+
+  let response = await fetch(`${API_URL}/marca/${id}`, {
+
     method: "DELETE",
   });
 
