@@ -6,14 +6,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Marca } from "@/models/marca";
-import { Loader2Icon, SaveIcon } from "lucide-react";
+
+
 import Link from "next/link";
 import { useActionState } from "react";
 
 type MarcasFormProps = {
-  marca?: Marca
-}
 
+  marca?:Marca
+}
 export function MarcasForm({marca}: MarcasFormProps) {
 
   const initialState: MarcaFormState = {
@@ -24,13 +25,16 @@ export function MarcasForm({marca}: MarcasFormProps) {
     action,
     initialState
   );
-
+ 
   return (
     <section className="mt-8">
       <form action={formAction} className="max-w-2xl">
+        {marca ? <Input type="hidden" name="id" defaultValue={marca?.id} />:null}
         <div className="space-y-4">
           <Label htmlFor="nome">Nome</Label>
-          <Input type="hidden" name="id" defaultValue={marca?.nome} />
+
+          <Input name="nome" defaultValue={marca?.nome} />
+
         </div>
         <div className="mt-4 flex justify-end gap-2">
 

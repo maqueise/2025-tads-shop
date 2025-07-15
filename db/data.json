@@ -1,50 +1,14 @@
 {
   "marca": [
     {
-      "id": "3",
-      "nome": "Sony"
+
+      "id": "f79e",
+      "nome": "Sony "
     },
     {
-      "id": "3399",
-      "nome": "joaquim felix"
-    },
-    {
-      "id": "1a28",
-      "nome": "shaco"
-    }
-  ],
-  "grupos": [
-    {
-      "id": "1",
-      "nome": "Eletronico",
-      "subGrupo": "amem"
-    },
-    {
-      "id": "2",
-      "nome": "Comida",
-      "subGrupo": "amem"
-    },
-    {
-      "id": "3",
-      "nome": "Deus",
-      "subGrupo": "amem"
-    },
-    {
-      "id": "4",
-      "nome": "Artefatos Divinos",
-      "subGrupo": "amem"
-    }
-  ],
-  "unidade": [
-    {
-      "id": "1",
-      "nome": "metros",
-      "fracionamento": "sim"
-    },
-    {
-      "id": "2",
-      "nome": "cm",
-      "fracionamento": "nao"
+      "id": "bf80",
+      "nome": "Microsoft"
+
     }
   ]
 }
