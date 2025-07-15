@@ -1,5 +1,6 @@
 "use server";
 
+
 import { stringifyFormData } from "@/lib/helpers";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
@@ -15,7 +16,7 @@ export async function criarMarca(
   prevState: MarcaFormState,
   formData: FormData
 ) {
-  let response = await fetch(`${API_URL}/marca`, {
+  let response = await fetch(`${API_URL}/marcas/`, {
     headers,
     method: "POST",
     body: stringifyFormData(formData),
@@ -37,7 +38,9 @@ export async function editarMarca(
   redirect("/cadastro/marcas/");
 }
 export async function deletarMarca(id: string) {
+
   let response = await fetch(`${API_URL}/marca/${id}`, {
+
     method: "DELETE",
   });
 
@@ -52,4 +55,16 @@ export async function deletarMarca(id: string) {
     sucesso: true,
     mensagem: `Marca excluída com sucesso`,
   };
+}
+
+  export async function editarMarca(prevState: MarcaFormState,formData: FormData) {
+    const id = formData.get("id")
+  let response = await fetch(`${API_URL}/marcas/${id}`, {
+    headers,
+    method: "PUT",
+    body: stringifyFormData(formData),
+  })
+await new Promise((resolve) => {setTimeout(resolve, 3000)});
+  return prevState;
+  redirect("/cadastro/marcas/")
 }

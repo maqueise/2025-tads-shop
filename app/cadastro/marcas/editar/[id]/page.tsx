@@ -1,6 +1,7 @@
 import { MarcasForm } from "../../marcas-form";
 
 type PageEditarMarcaProps = {
+
     params: Promise<{ id: string }>;
 }
 async function buscarMarca(id: string) {
@@ -23,4 +24,5 @@ const marca = await buscarMarca(id);
          <MarcasForm marca={marca}/>
        </section>
   );
+
 }

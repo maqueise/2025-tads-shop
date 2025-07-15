@@ -1,5 +1,6 @@
 "use client";
 import { deletarMarca } from "@/actions/marca-actions";
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -39,17 +40,22 @@ export function DeleteButton({ id }: DeleteButtonProps) {
           <AlertDialogDescription>
             Tem certeza que deseja excluir este registro? Esta ação não pode ser
             desfeita.
+
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancelar</AlertDialogCancel>
           <AlertDialogAction asChild>
+
             <Button variant="destructive" onClick={handleDelete}>
               Excluir
             </Button>
+
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
+
   );
 }
+
