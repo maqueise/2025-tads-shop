@@ -21,11 +21,11 @@ export function MarcasForm({marca}: MarcasFormProps) {
     action,
     initialState
   );
-  console.log(marca)
+ 
   return (
     <section className="mt-8">
       <form action={formAction} className="max-w-2xl">
-        <Input type="hidden" name="id" defaultValue={marca?.id} />
+        {marca ? <Input type="hidden" name="id" defaultValue={marca?.id} />:null}
         <div className="space-y-4">
           <Label htmlFor="nome">Nome</Label>
           <Input name="nome" defaultValue={marca?.nome} />
