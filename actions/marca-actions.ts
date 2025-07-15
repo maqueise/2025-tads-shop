@@ -51,8 +51,8 @@ export async function deletarMarca(id: string) {
     headers,
     method: "PUT",
     body: stringifyFormData(formData),
-  });
-
-
-
+  })
+await new Promise((resolve) => {setTimeout(resolve, 3000)});
+  return prevState;
+  redirect("/cadastro/marcas/")
 }
